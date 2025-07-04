@@ -6,6 +6,7 @@ import { Rockets } from './components/rockets/rockets';
 import { Capsules } from './components/capsules/capsules';
 import { Cores } from './components/cores/cores';
 import { SingleLaunch } from './components/single-launch/single-launch';
+import { SingleRocket } from './components/single-rocket/single-rocket';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,7 +15,10 @@ export const routes: Routes = [
     { path: '', component: Launches },
     { path: ':flightNumber', component: SingleLaunch }
   ]},
-  { path: 'rockets', component: Rockets },
+  { path: 'rockets', children: [  
+    {path: '', component: Rockets},
+    {path: ':id', component: SingleRocket}
+  ]},
   { path: 'capsules', component: Capsules },
   { path: 'cores', component: Cores },
 ];

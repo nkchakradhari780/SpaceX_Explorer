@@ -1,17 +1,13 @@
 <app-hero />
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <app-explore-card/>
-    <app-explore-card/>
-    <app-explore-card/>
-    <app-explore-card/>
-    <app-explore-card/>
-    <app-explore-card/>
-    <app-explore-card/>
-    <app-explore-card/>
+    <app-explore-card [Name]="'Launches'" [icon]="'rocket_launch'" [routerLink]="['/launches']" />
+    <app-explore-card [Name]="'Rockets'" [icon]="'bolt'" [routerLink]="['/rockets']" />
+    <app-explore-card [Name]="'Capsules'" [icon]="'satellite_alt'" [routerLink]="['/capsules']" />
+    <app-explore-card [Name]="'Cores'" [icon]="'my_location'" [routerLink]="['/cores']" />
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <app-feature-card/>
-    <app-feature-card/>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-[50px]">
+    <!-- <app-feature-card [Title]="'Latest Launch'"  [Description]="'Discover the most recent SpaceX launch and its mission details.'" [icon]="'rocket_launch'"/>
+    <app-feature-card [Title]="'Upcoming missions'" [Description]="'Stay updated with upcoming SpaceX launches and missions.'" [icon]="'calendar_today'"/> -->
   </div>

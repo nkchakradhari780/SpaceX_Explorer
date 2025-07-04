@@ -1,155 +1,231 @@
-<div class="space-y-6 p-6  min-h-screen">
-  <!-- Back Button -->
-  <a href="/cores" class="inline-flex items-center border border-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 mb-4">
-    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" /></svg>
+<div class="space-y-6 p-6 min-h-screen">
+  <a
+    [routerLink]="['/cores']"
+    class="inline-flex items-center border border-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 mb-4"
+  >
+    <svg
+      class="w-4 h-4 mr-2"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M15 19l-7-7 7-7" />
+    </svg>
     Back to Cores
   </a>
 
-  <!-- Header -->
   <div class="text-center space-y-4">
     <div class="flex items-center justify-center gap-4 mb-4">
-      <h1 class="text-3xl md:text-4xl font-bold text-white">B1058</h1>
-      <span class="border px-2 py-1 rounded text-xs text-green-400 border-green-400">active</span>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">
+        {{coreData.core_serial}}
+      </h1>
+      <span
+        class="border px-2 py-1 rounded text-xs"
+        [ngClass]="{
+              'text-green-400 border-green-400': coreData.status === 'active',
+              'text-blue-400 border-blue-400': coreData.status === 'inactive',
+              'text-red-400 border-red-400': coreData.status === 'destroyed',
+              'text-orange-400 border-orange-400': coreData.status === 'expended',
+              'text-gray-400 border-gray-400': coreData.status !== 'active' && 
+                                      coreData.status !== 'inactive' && 
+                                      coreData.status !== 'destroyed' && 
+                                      coreData.status !== 'expended'
+  }">
+        {{ coreData.status }}
+      </span>
+      F
     </div>
     <div class="text-gray-300 flex justify-center gap-2">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7" /></svg>
-      <span>Block 5 Core</span>
+      <svg
+        class="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M4 6h16M4 12h16M4 18h7" />
+      </svg>
+      <span>Block {{coreData.block}} Core</span>
     </div>
   </div>
 
-  <!-- Core Details -->
   <div class="border border-gray-700 bg-gray-800/50 p-6 rounded">
     <h2 class="text-white text-lg font-semibold mb-2">Core Details</h2>
-    <p class="text-gray-300 text-sm">This core has been reused for multiple missions and has completed several successful landings.</p>
+    <p class="text-gray-300 text-sm">{{coreData.details}}</p>
   </div>
 
-  <!-- Key Stats -->
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
     <div class="border border-gray-700 bg-gray-800/50 p-4 text-center rounded">
-      <svg class="w-8 h-8 text-blue-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3M16 7V3M4 11h16M5 19h14" /></svg>
-      <p class="text-2xl text-white font-bold">2020</p>
+      <svg
+        class="w-8 h-8 text-blue-400 mx-auto mb-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M8 7V3M16 7V3M4 11h16M5 19h14" />
+      </svg>
+      <p class="text-2xl text-white font-bold">{{coreData.original_launch}}</p>
       <p class="text-sm text-gray-400">First Launch</p>
     </div>
     <div class="border border-gray-700 bg-gray-800/50 p-4 text-center rounded">
-      <svg class="w-8 h-8 text-green-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6v6l4 2" /></svg>
-      <p class="text-2xl text-white font-bold">8</p>
+      <svg
+        class="w-8 h-8 text-green-400 mx-auto mb-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 6v6l4 2" />
+      </svg>
+      <p class="text-2xl text-white font-bold">{{coreData.missions.length}}</p>
       <p class="text-sm text-gray-400">Missions</p>
     </div>
     <div class="border border-gray-700 bg-gray-800/50 p-4 text-center rounded">
-      <svg class="w-8 h-8 text-yellow-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 17v-6h13" /></svg>
-      <p class="text-2xl text-white font-bold">6</p>
+      <svg
+        class="w-8 h-8 text-yellow-400 mx-auto mb-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M9 17v-6h13" />
+      </svg>
+      <p class="text-2xl text-white font-bold">
+        {{coreData.rtls_landings + coreData.asds_landings}}
+      </p>
       <p class="text-sm text-gray-400">Successful Landings</p>
     </div>
     <div class="border border-gray-700 bg-gray-800/50 p-4 text-center rounded">
-      <svg class="w-8 h-8 text-purple-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m0-4h.01" /></svg>
-      <p class="text-2xl text-white font-bold">5</p>
+      <svg
+        class="w-8 h-8 text-purple-400 mx-auto mb-2"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M13 16h-1v-4h-1m0-4h.01" />
+      </svg>
+      <p class="text-2xl text-white font-bold">{{coreData.reuse_count}}</p>
       <p class="text-sm text-gray-400">Reuse Count</p>
     </div>
   </div>
 
-  <!-- Info + Landing -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-    <!-- General Info -->
     <div class="border border-gray-700 bg-gray-800/50 p-6 rounded">
       <h3 class="text-white font-semibold flex items-center gap-2 mb-4">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7" /></svg>
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
         General Information
       </h3>
       <div class="grid grid-cols-2 gap-4 text-sm text-white">
         <div>
           <p class="text-gray-400">Core Serial</p>
-          <p>B1058</p>
+          <p>{{coreData.core_serial}}</p>
         </div>
         <div>
           <p class="text-gray-400">Block</p>
-          <p>5</p>
+          <p>{{coreData.block}}</p>
         </div>
         <div>
           <p class="text-gray-400">Status</p>
-          <p>Active</p>
+          <p>{{coreData.status}}</p>
         </div>
         <div>
           <p class="text-gray-400">Water Landing</p>
-          <p>Yes</p>
+          <p>{{coreData.water_landing ? 'Yes' : 'No'}}</p>
         </div>
       </div>
       <hr class="my-4 border-gray-700" />
       <div class="grid grid-cols-2 gap-4 text-sm text-white">
         <div>
           <p class="text-gray-400">Original Launch</p>
-          <p>05/30/2020</p>
+          <p>{{coreData.original_launch}}</p>
         </div>
         <div>
           <p class="text-gray-400">Launch Unix</p>
-          <p>1590849600</p>
+          <p>{{coreData.original_launch_unix}}</p>
         </div>
       </div>
     </div>
 
-    <!-- Landing Performance -->
     <div class="border border-gray-700 bg-gray-800/50 p-6 rounded">
       <h3 class="text-white font-semibold flex items-center gap-2 mb-4">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7" /></svg>
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M17 16l4-4m0 0l-4-4m4 4H7" />
+        </svg>
         Landing Performance
       </h3>
       <div class="grid grid-cols-2 gap-4 text-sm text-white">
         <div>
           <p class="text-gray-400">RTLS Attempts</p>
-          <p>4</p>
+          <p>{{coreData.rtls_attempts}}</p>
         </div>
         <div>
           <p class="text-gray-400">RTLS Landings</p>
-          <p>3</p>
+          <p>{{coreData.rtls_landings}}</p>
         </div>
         <div>
           <p class="text-gray-400">ASDS Attempts</p>
-          <p>3</p>
+          <p>{{coreData.asds_attempts}}</p>
         </div>
         <div>
           <p class="text-gray-400">ASDS Landings</p>
-          <p>3</p>
+          <p>{{coreData.asds_landings}}</p>
         </div>
       </div>
       <hr class="my-4 border-gray-700" />
       <div class="grid grid-cols-2 gap-4 text-sm text-white">
         <div>
           <p class="text-gray-400">Total Attempts</p>
-          <p>7</p>
+          <p>{{coreData.rtls_attempts + coreData.asds_attempts}}</p>
         </div>
         <div>
           <p class="text-gray-400">Success Rate</p>
-          <p>85%</p>
+          <p>
+            {{coreData.rtls_attempts + coreData.asds_attempts > 0 ?
+            Math.round(((coreData.rtls_landings + coreData.asds_landings) /
+            (coreData.rtls_attempts + coreData.asds_attempts)) * 100) : 0}}%
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Missions -->
   <div class="border border-gray-700 bg-gray-800/50 p-6 rounded">
     <h3 class="text-white font-semibold flex items-center gap-2 mb-4">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6v6l4 2" /></svg>
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M12 6v6l4 2" />
+      </svg>
       Missions
     </h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="bg-gray-700/50 p-4 rounded">
+      <div *ngFor="let mission of coreData.missions" class="bg-gray-700/50 p-4 rounded">
         <div class="flex justify-between mb-2">
-          <h4 class="text-white font-medium">Crew Demo-2</h4>
-          <span class="border border-gray-400 text-gray-300 text-xs px-2 py-1 rounded">Flight #1</span>
+          <h4 class="text-white font-medium">{{mission.name}}</h4>
+          <span
+            class="border border-gray-400 text-gray-300 text-xs px-2 py-1 rounded"
+            >Flight #{{mission.flight}}</span
+          >
         </div>
-        <a href="#" class="block w-full text-center border border-gray-600 text-white py-1.5 rounded hover:bg-gray-700 mt-2">
+        <a
+          [routerLink]="['/flights', mission.flight]"
+          class="block w-full text-center border border-gray-600 text-white py-1.5 rounded hover:bg-gray-700 mt-2"
+        >
           View Launch Details
         </a>
       </div>
-      <div class="bg-gray-700/50 p-4 rounded">
-        <div class="flex justify-between mb-2">
-          <h4 class="text-white font-medium">Starlink-12</h4>
-          <span class="border border-gray-400 text-gray-300 text-xs px-2 py-1 rounded">Flight #2</span>
-        </div>
-        <a href="#" class="block w-full text-center border border-gray-600 text-white py-1.5 rounded hover:bg-gray-700 mt-2">
-          View Launch Details
-        </a>
-      </div>
-      <!-- Add more mission cards as needed -->
     </div>
   </div>
 </div>

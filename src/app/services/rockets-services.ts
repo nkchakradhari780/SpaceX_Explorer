@@ -13,7 +13,7 @@ export class RocketsServices {
     return this.http.get<SpaceXRocket[]>(this.baseUrl);
   }
 
-  getRocketById(rocketId: number): Observable<SpaceXRocket> {
+  getRocketById(rocketId: string): Observable<SpaceXRocket> {
     const url = `${this.baseUrl}/${rocketId}`;
     return this.http.get<SpaceXRocket>(url);
   }

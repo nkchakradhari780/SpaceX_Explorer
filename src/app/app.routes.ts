@@ -8,6 +8,7 @@ import { Cores } from './components/cores/cores';
 import { SingleLaunch } from './components/single-launch/single-launch';
 import { SingleRocket } from './components/single-rocket/single-rocket';
 import { SingleCapsule } from './components/single-capsule/single-capsule';
+import { SingleCores } from './components/single-cores/single-cores';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,11 +19,14 @@ export const routes: Routes = [
   ]},
   { path: 'rockets', children: [  
     {path: '', component: Rockets},
-    // {path: ':id', component: SingleRocket}
+    {path: ':rocket_id', component: SingleRocket}
   ]},
   { path: 'capsules', children:[
     {path: '', component: Capsules}, 
     {path: ':capsule_serial', component: SingleCapsule}
   ]},
-  { path: 'cores', component: Cores },
+  { path: 'cores', children: [
+    {path: '', component: Cores},
+    {path: ':core_serial', component: SingleCores}
+  ]},
 ];

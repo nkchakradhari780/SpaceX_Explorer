@@ -20,16 +20,16 @@ export class SingleRocket implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const param = params.get('id');
+      const param = params.get('rocket_id');
       console.log("Hii Rocket Data:", param)
       if(param) {
-        const rocket_id = +param;
+        const rocket_id = param;
         this.fetchRocketData(rocket_id);
       }
     }) 
   }
 
-  fetchRocketData(id: number): void {
+  fetchRocketData(id: string): void {
     this.service.getRocketById(id).subscribe({
       next: (response) => {
         this.rocketData = response;

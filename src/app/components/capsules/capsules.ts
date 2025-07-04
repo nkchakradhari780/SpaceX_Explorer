@@ -18,7 +18,6 @@ export class Capsules {
   ngOnInit(): void{
     this.service.getAllCapsules().subscribe({
       next: (response: SpaceXCapsule[]) =>{
-        console.log("hi")
         this.capsuleList = response;
         console.log("All Capsules: ", response);
       }, 

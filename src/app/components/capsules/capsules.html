@@ -1,0 +1,103 @@
+<!-- Page Container -->
+<div class="space-y-6 p-6 min-h-screen text-white">
+
+  <!-- Header -->
+  <div class="text-center space-y-4">
+    <h1 class="text-3xl md:text-4xl font-bold">SpaceX Capsules</h1>
+    <p class="text-gray-300 max-w-2xl mx-auto">
+      Explore SpaceX's fleet of Dragon capsules that have carried cargo and crew to the International Space Station.
+    </p>
+  </div>
+
+  <!-- Search -->
+  <div class="relative max-w-md mx-auto">
+    <svg class="absolute left-3 top-3 h-4 w-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18.5a7.5 7.5 0 006.15-3.85z" />
+    </svg>
+    <input
+      type="text"
+      placeholder="Search capsules..."
+      class="pl-10 pr-4 py-2 w-full bg-gray-800 border border-gray-700 rounded-md text-white"
+    />
+  </div>
+
+  <!-- Tabs -->
+  <div>
+    <div class="grid grid-cols-5 gap-2 bg-gray-800 border border-gray-700 rounded-md text-center text-sm font-medium overflow-hidden">
+      <button class="px-3 py-2 hover:bg-gray-700">All (10)</button>
+      <button class="px-3 py-2 hover:bg-gray-700">Active (4)</button>
+      <button class="px-3 py-2 hover:bg-gray-700">Retired (3)</button>
+      <button class="px-3 py-2 hover:bg-gray-700">Destroyed (2)</button>
+      <button class="px-3 py-2 hover:bg-gray-700">Unknown (1)</button>
+    </div>
+  </div>
+
+  <!-- Capsules Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Capsule Card -->
+    <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4 backdrop-blur-sm hover:bg-gray-800/70 transition-all">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <h2 class="text-lg font-semibold">C101</h2>
+          <p class="text-sm text-gray-400">Dragon 1.0</p>
+        </div>
+        <span class="text-green-400 border border-green-400 text-xs px-2 py-0.5 rounded">active</span>
+      </div>
+
+      <div class="space-y-3 text-sm text-gray-300">
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 7V3m8 4V3m-9 9h10M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          First Launch: 2010-12-08
+        </div>
+
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M14.25 6.087a9.003 9.003 0 010 11.826M9.75 6.087a9.003 9.003 0 000 11.826M9 12h.01M15 12h.01" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Missions: 2
+        </div>
+
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 11c1.656 0 3-.895 3-2s-1.344-2-3-2-3 .895-3 2 1.344 2 3 2zM6.934 13c-1.052 0-1.934.895-1.934 2s.882 2 1.934 2h10.132c1.052 0 1.934-.895 1.934-2s-.882-2-1.934-2H6.934z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Landings: 1
+        </div>
+
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M17 20h5V4H2v16h5M12 12l-2 2h4l-2 2m0-4v6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Reuse Count: 1
+        </div>
+
+        <p class="text-sm text-gray-400 line-clamp-2">
+          First flight of Dragon capsule for NASA’s COTS program.
+        </p>
+
+        <!-- Missions Badges -->
+        <div>
+          <p class="text-sm font-medium text-gray-300 mb-1">Missions:</p>
+          <div class="flex flex-wrap gap-1">
+            <span class="text-xs border border-gray-400 text-white px-2 py-0.5 rounded">COTS Demo</span>
+            <span class="text-xs border border-gray-400 text-white px-2 py-0.5 rounded">CRS-1</span>
+            <span class="text-xs border border-gray-400 text-white px-2 py-0.5 rounded">+1 more</span>
+          </div>
+        </div>
+
+        <!-- View Details Button -->
+        <a href="/capsules/C101" class="block mt-4">
+          <button class="w-full px-4 py-2 border border-gray-700 rounded hover:bg-gray-700 text-white">
+            View Details
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Repeat above .card for more capsules if needed -->
+
+  </div>
+</div>

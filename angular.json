@@ -82,11 +82,15 @@
               }
             ],
             "styles": [
+              "node_modules/material-design-icons/iconfont/material-icons.css",
               "src/styles.css"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "03511997-6d27-4c95-bf3b-991b7dbb423e"
   }
 }

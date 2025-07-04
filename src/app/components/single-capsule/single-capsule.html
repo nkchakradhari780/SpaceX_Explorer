@@ -1,0 +1,183 @@
+<div class="space-y-6">
+
+  <!-- Back Button -->
+  <a href="/capsules" class="inline-flex items-center px-4 py-2 border border-gray-500 text-white rounded hover:bg-gray-700 mb-4">
+    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M15 19l-7-7 7-7" />
+    </svg>
+    Back to Capsules
+  </a>
+
+  <!-- Header -->
+  <div class="text-center space-y-4">
+    <div class="flex items-center justify-center gap-4 mb-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-white">C101</h1>
+      <span class="border border-green-400 text-green-400 px-2 py-0.5 rounded text-sm">active</span>
+    </div>
+
+    <div class="space-y-2 text-gray-300">
+      <div class="flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 4l16 16M4 20L20 4" />
+        </svg>
+        <span>Dragon 1.0 Capsule</span>
+      </div>
+      <div class="flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M8 7V3m8 4V3m-9 8h10m-2 4h-6m4 4h-2" />
+        </svg>
+        <span>ID: dragon1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Capsule Details -->
+  <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded">
+    <div class="border-b border-gray-700 px-4 py-2">
+      <h2 class="text-white font-semibold">Capsule Details</h2>
+    </div>
+    <div class="p-4 text-gray-300">
+      <p>This capsule was used in CRS-1 and returned safely to Earth.</p>
+    </div>
+  </div>
+
+  <!-- Key Stats -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded text-center p-4">
+      <svg class="w-8 h-8 text-blue-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M8 7V3m8 4V3m-9 8h10m-2 4h-6m4 4h-2" />
+      </svg>
+      <p class="text-2xl font-bold text-white">2012</p>
+      <p class="text-sm text-gray-400">First Launch</p>
+    </div>
+    <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded text-center p-4">
+      <svg class="w-8 h-8 text-green-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" />
+      </svg>
+      <p class="text-2xl font-bold text-white">2</p>
+      <p class="text-sm text-gray-400">Missions</p>
+    </div>
+    <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded text-center p-4">
+      <svg class="w-8 h-8 text-yellow-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M21 10H7m-2 0H3m16 4H3m0 4h18" />
+      </svg>
+      <p class="text-2xl font-bold text-white">2</p>
+      <p class="text-sm text-gray-400">Landings</p>
+    </div>
+    <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded text-center p-4">
+      <svg class="w-8 h-8 text-purple-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M5 12h14M5 12l4 4m-4-4l4-4" />
+      </svg>
+      <p class="text-2xl font-bold text-white">1</p>
+      <p class="text-sm text-gray-400">Reuse Count</p>
+    </div>
+  </div>
+
+  <!-- General Info -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+    <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded">
+      <div class="border-b border-gray-700 px-4 py-2">
+        <h2 class="text-white font-semibold flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 4l16 16M4 20L20 4" />
+          </svg>
+          General Information
+        </h2>
+      </div>
+      <div class="p-4 space-y-4">
+        <div class="grid grid-cols-2 gap-4 text-white text-sm">
+          <div>
+            <p class="text-gray-400">Capsule Serial</p>
+            <p>C101</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Capsule ID</p>
+            <p>dragon1</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Type</p>
+            <p>Dragon 1.0</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Status</p>
+            <p>Active</p>
+          </div>
+        </div>
+        <hr class="border-gray-700" />
+        <div class="grid grid-cols-2 gap-4 text-white text-sm">
+          <div>
+            <p class="text-gray-400">Original Launch</p>
+            <p>10/8/2012</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Launch Unix</p>
+            <p>1350000000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Performance -->
+    <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded">
+      <div class="border-b border-gray-700 px-4 py-2">
+        <h2 class="text-white font-semibold flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l9 21H3L12 2z" />
+          </svg>
+          Mission Performance
+        </h2>
+      </div>
+      <div class="p-4 space-y-4 text-white text-sm">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-gray-400">Total Missions</p>
+            <p>2</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Successful Landings</p>
+            <p>2</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Reuse Count</p>
+            <p>1</p>
+          </div>
+          <div>
+            <p class="text-gray-400">Success Rate</p>
+            <p>100%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Missions -->
+  <div class="border border-gray-700 bg-gray-800/50 backdrop-blur-sm rounded">
+    <div class="border-b border-gray-700 px-4 py-2">
+      <h2 class="text-white font-semibold flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l9 21H3L12 2z" />
+        </svg>
+        Missions
+      </h2>
+    </div>
+    <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-gray-700/50 p-4 rounded">
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-medium text-white">CRS-1</h4>
+          <span class="border border-gray-400 text-white text-xs px-2 py-0.5 rounded">Flight #1</span>
+        </div>
+        <a href="/launches/1" class="block text-center text-sm border border-gray-600 text-white py-2 rounded hover:bg-gray-700">View Launch Details</a>
+      </div>
+
+      <div class="bg-gray-700/50 p-4 rounded">
+        <div class="flex justify-between items-center mb-2">
+          <h4 class="font-medium text-white">CRS-2</h4>
+          <span class="border border-gray-400 text-white text-xs px-2 py-0.5 rounded">Flight #2</span>
+        </div>
+        <a href="/launches/2" class="block text-center text-sm border border-gray-600 text-white py-2 rounded hover:bg-gray-700">View Launch Details</a>
+      </div>
+    </div>
+  </div>
+
+</div>

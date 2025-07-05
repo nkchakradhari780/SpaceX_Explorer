@@ -1,16 +1,13 @@
 <nav class="bg-gray-900/80 backdrop-blur-md border-b border-gray-800 sticky top-0 z-50">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between h-16">
-      <!-- Logo -->
       <a href="/" class="flex items-center space-x-2">
-        <!-- Rocket Icon Placeholder -->
         <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path d="M12 2l3 7-7 3 3-7zM12 22v-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="text-xl font-bold text-white">SpaceX Explorer</span>
       </a>
 
-      <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center space-x-1">
       <a [routerLink]="['/']" class="px-3 py-2 rounded-md text-sm font-medium text-white transition-colors hover:bg-gray-800 hover:text-white">Dashboard</a>
       <a [routerLink]="['/launches']" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">Launches</a>
@@ -23,10 +20,8 @@
       <a [routerLink]="['/missions']" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition-colors">Missions</a> -->
     </div>
 
-      <!-- Mobile Menu Button -->
       <div class="md:hidden">
         <button id="mobile-menu-toggle" class="text-gray-300 p-2 rounded hover:bg-gray-800">
-          <!-- Menu Icon -->
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

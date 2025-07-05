@@ -12,6 +12,7 @@ import { LaunchServices } from '../../services/launch-services';
 })
 export class SingleRocket implements OnInit {
   rocketData!: SpaceXRocket;
+  window: any;
 
   constructor(
     private service: RocketsServices, 

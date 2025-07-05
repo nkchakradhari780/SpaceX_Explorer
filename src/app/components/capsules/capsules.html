@@ -1,18 +1,12 @@
 <div class="space-y-6 p-6 min-h-screen text-white">
-
   <div class="text-center space-y-4">
     <h1 class="text-3xl md:text-4xl font-bold">SpaceX Capsules</h1>
     <p class="text-gray-300 max-w-2xl mx-auto">
       Explore SpaceX's fleet of Dragon capsules that have carried cargo and crew to the International Space Station.
     </p>
   </div>
-
-
-
-  <!-- Capsules Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <div *ngFor="let capsule of capsuleList">
-    <!-- Capsule Card -->
     <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4 backdrop-blur-sm hover:bg-gray-800/70 transition-all">
       <div class="flex items-start justify-between mb-4">
         <div>
@@ -55,7 +49,6 @@
         <p class="text-sm text-gray-400 line-clamp-2">
          {{capsule.details}}   </p>
 
-        <!-- Missions Badges -->
         <div>
           <p class="text-sm font-medium text-gray-300 mb-1">Missions:</p>
           <div class="flex flex-wrap gap-1">
@@ -65,7 +58,6 @@
           </div>
         </div>
 
-        <!-- View Details Button -->
         <a [routerLink]="['/capsules', capsule.capsule_serial]" class="block mt-4">
           <button class="w-full px-4 py-2 border border-gray-700 rounded hover:bg-gray-700 text-white">
             View Details
@@ -73,8 +65,6 @@
         </a>
       </div>
     </div>
-
-    <!-- Repeat above .card for more capsules if needed -->
     </div>
   </div>
 </div>

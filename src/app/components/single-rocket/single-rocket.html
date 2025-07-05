@@ -1,52 +1,48 @@
 <div class="space-y-6 p-6  text-white">
 
-  <!-- Back Button -->
-  <a href="/rockets" class="inline-flex items-center border border-gray-600 px-4 py-2 text-white rounded hover:bg-gray-800 transition mb-4">
+  <a [routerLink]="['/rockets']" class="inline-flex items-center border border-gray-600 px-4 py-2 text-white rounded hover:bg-gray-800 transition mb-4">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
     </svg>
     Back to Rockets
   </a>
 
-  <!-- Header -->
   <div class="text-center space-y-4">
     <div class="flex items-center justify-center gap-4 mb-4">
-      <h1 class="text-3xl md:text-4xl font-bold text-white">Falcon 9</h1>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">{{rocketData.rocket_name}}</h1>
       <div class="flex flex-wrap gap-2">
-        <span class="border border-green-400 text-green-400 text-sm px-2 py-1 rounded">Active</span>
-        <span class="border border-blue-400 text-blue-400 text-sm px-2 py-1 rounded">Reusable</span>
+        <span *ngIf="rocketData.active === true" class="border border-green-400 text-green-400 text-sm px-2 py-1 rounded">Active</span>
+        <span *ngIf="rocketData.active === false" class="border border-gray-400 text-gray-400 text-sm px-2 py-1 rounded">Inactive</span>
+        <span *ngIf="rocketData.first_stage.reusable === true" class="border border-blue-400 text-blue-400 text-sm px-2 py-1 rounded">Reusable</span>
       </div>
     </div>
     <p class="text-gray-300 max-w-3xl mx-auto text-lg">
-      Falcon 9 is a reusable two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond.
-    </p>
+     {{rocketData.description}}    </p>
   </div>
 
-  <!-- Key Stats -->
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
     <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-4 text-center rounded">
       <div class="text-blue-400 text-3xl mb-2">📏</div>
-      <p class="text-2xl font-bold text-white">70m</p>
+      <p class="text-2xl font-bold text-white">{{rocketData.height.meters}}m</p>
       <p class="text-sm text-gray-400">Height</p>
     </div>
     <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-4 text-center rounded">
       <div class="text-green-400 text-3xl mb-2">⚖️</div>
-      <p class="text-2xl font-bold text-white">549,054kg</p>
+      <p class="text-2xl font-bold text-white">{{rocketData.mass.kg}}kg</p>
       <p class="text-sm text-gray-400">Mass</p>
     </div>
     <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-4 text-center rounded">
       <div class="text-yellow-400 text-3xl mb-2">⚡</div>
-      <p class="text-2xl font-bold text-white">97%</p>
+      <p class="text-2xl font-bold text-white">{{rocketData.success_rate_pct}}%</p>
       <p class="text-sm text-gray-400">Success Rate</p>
     </div>
     <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-4 text-center rounded">
       <div class="text-purple-400 text-3xl mb-2">🎯</div>
-      <p class="text-2xl font-bold text-white">$62,000,000</p>
+      <p class="text-2xl font-bold text-white">{{rocketData.cost_per_launch | currency}}</p>
       <p class="text-sm text-gray-400">Cost per Launch</p>
     </div>
   </div>
 
-  <!-- General Information -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <div class="bg-gray-800/50 border border-gray-700 rounded">
       <div class="border-b border-gray-700 px-4 py-3 font-bold flex items-center gap-2 text-white">
@@ -56,52 +52,51 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <p class="text-gray-400">Rocket Type</p>
-            <p>FT</p>
+            <p>{{rocketData.rocket_type}}</p>
           </div>
           <div>
             <p class="text-gray-400">Company</p>
-            <p>SpaceX</p>
+            <p>{{rocketData.company}}</p>
           </div>
           <div>
             <p class="text-gray-400">Country</p>
-            <p>USA</p>
+            <p>{{rocketData.country}}</p>
           </div>
           <div>
             <p class="text-gray-400">First Flight</p>
-            <p>2010-06-04</p>
+            <p>{{rocketData.first_flight | date:'shortDate'}}</p>
           </div>
           <div>
             <p class="text-gray-400">Stages</p>
-            <p>2</p>
+            <p>{{rocketData.stages}}</p>
           </div>
           <div>
             <p class="text-gray-400">Boosters</p>
-            <p>0</p>
+            <p>{{rocketData.boosters}}</p>
           </div>
         </div>
         <hr class="border-gray-700" />
         <div class="grid grid-cols-2 gap-4">
           <div>
             <p class="text-gray-400">Height</p>
-            <p>70m (229.6ft)</p>
+            <p>{{rocketData.height.meters}}m ({{rocketData.height.feet}}ft)</p>
           </div>
           <div>
             <p class="text-gray-400">Diameter</p>
-            <p>3.7m (12ft)</p>
+            <p>{{rocketData.diameter.meters}}m ({{rocketData.diameter.feet}}ft)</p>
           </div>
           <div>
             <p class="text-gray-400">Mass</p>
-            <p>549,054kg (1,207,920lb)</p>
+            <p>{{rocketData.mass.kg}}kg ({{rocketData.mass.lb}}lb)</p>
           </div>
           <div>
             <p class="text-gray-400">Landing Legs</p>
-            <p>4 (carbon fiber)</p>
+            <p>{{rocketData.landing_legs.number}} ({{rocketData.landing_legs.material}})</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Engine Details -->
     <div class="bg-gray-800/50 border border-gray-700 rounded">
       <div class="border-b border-gray-700 px-4 py-3 font-bold flex items-center gap-2 text-white">
         ⚙️ Engine Details
@@ -110,63 +105,66 @@
         <div class="grid grid-cols-2 gap-4">
           <div>
             <p class="text-gray-400">Number</p>
-            <p>9</p>
+            <p>{{rocketData.engines.number}}</p>
           </div>
           <div>
             <p class="text-gray-400">Type</p>
-            <p>Merlin</p>
+            <p>{{rocketData.engines.type}}</p>
           </div>
           <div>
             <p class="text-gray-400">Version</p>
-            <p>1D+</p>
+            <p>{{rocketData.engines.version}}</p>
           </div>
           <div>
             <p class="text-gray-400">Layout</p>
-            <p>Octaweb</p>
+            <p>{{rocketData.engines.layout}}</p>
           </div>
         </div>
         <hr class="border-gray-700" />
         <div class="space-y-3">
           <div>
             <p class="text-gray-400">Propellants</p>
-            <p>RP-1 / Liquid Oxygen</p>
+            <p>{{rocketData.engines.propellant_2}}</p>
           </div>
           <div>
             <p class="text-gray-400">Thrust (Sea Level)</p>
-            <p>7607 kN</p>
+            <p>{{rocketData.engines.thrust_sea_level.kN.toLocaleString()}} kN</p>
           </div>
           <div>
             <p class="text-gray-400">Thrust (Vacuum)</p>
-            <p>8227 kN</p>
+            <p>{{rocketData.engines.thrust_vacuum.kN.toLocaleString()}} kN</p>
           </div>
           <div>
             <p class="text-gray-400">Thrust to Weight</p>
-            <p>180.1</p>
+            <p>{{rocketData.engines.thrust_to_weight}}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Images Section -->
   <div class="bg-gray-800/50 border border-gray-700 rounded">
-    <div class="border-b border-gray-700 px-4 py-3 font-bold text-white">
-      Images
-    </div>
-    <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <img src="https://imgur.com/DaCfMsj.jpg" alt="Falcon 9" class="w-full h-48 object-cover rounded-lg hover:opacity-80 transition" />
-      <img src="https://imgur.com/azYafd8.jpg" alt="Falcon 9" class="w-full h-48 object-cover rounded-lg hover:opacity-80 transition" />
-      <img src="https://imgur.com/IdAn3D7.jpg" alt="Falcon 9" class="w-full h-48 object-cover rounded-lg hover:opacity-80 transition" />
-    </div>
+  <div class="border-b border-gray-700 px-4 py-3 font-bold text-white">
+    Images
   </div>
+  <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <img
+      *ngFor="let img of rocketData.flickr_images"
+      [src]="img"
+      alt="Rocket Image"
+      class="rounded cursor-pointer hover:opacity-80 transition"
+      (click)="window.open(img, '_blank')"
+    />
+  </div>
+</div>
 
-  <!-- External Links -->
+
   <div class="bg-gray-800/50 border border-gray-700 rounded">
     <div class="border-b border-gray-700 px-4 py-3 font-bold text-white">
       External Links
     </div>
     <div class="p-4">
-      <a href="https://en.wikipedia.org/wiki/Falcon_9" target="_blank" class="inline-flex items-center gap-2 border border-gray-600 px-4 py-2 rounded hover:bg-gray-800 transition">
+      <a [href]="rocketData.wikipedia" target="_blank" class="inline-flex items-center gap-2 border border-gray-600 px-4 py-2 rounded hover:bg-gray-800 transition">
         🌐 Wikipedia
       </a>
     </div>

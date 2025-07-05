@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 export class ExploreCard {
   @Input() Name!: string;
   @Input() icon!: string;
+  @Input() description!: string;
 }

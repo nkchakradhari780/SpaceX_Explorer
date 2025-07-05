@@ -1,13 +1,32 @@
 <app-hero />
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <app-explore-card [Name]="'Launches'" [icon]="'rocket_launch'" [routerLink]="['/launches']" />
-    <app-explore-card [Name]="'Rockets'" [icon]="'bolt'" [routerLink]="['/rockets']" />
-    <app-explore-card [Name]="'Capsules'" [icon]="'satellite_alt'" [routerLink]="['/capsules']" />
-    <app-explore-card [Name]="'Cores'" [icon]="'my_location'" [routerLink]="['/cores']" />
-  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+  <app-explore-card
+    [Name]="'Launches'"
+    [description]="'Discover detailed insights about each SpaceX mission. From early Falcon 1 flights to the latest Starship milestones.'"
+    [icon]="'rocket_launch'"
+    [routerLink]="['/launches']"
+  />
+  <app-explore-card
+    [Name]="'Rockets'"
+    [description]="'Dive into SpaceX’s powerful rocket lineup. View specifications, payload capacities, and flight history.'"
+    [icon]="'bolt'"
+    [routerLink]="['/rockets']"
+  />
+  <app-explore-card
+    [Name]="'Capsules'"
+    [description]="'Explore Dragon capsules used for cargo and crew missions. Track reusability, launch history, and mission roles.'"
+    [icon]="'satellite_alt'"
+    [routerLink]="['/capsules']"
+  />
+  <app-explore-card
+    [Name]="'Cores'"
+    [description]="'Inspect the heart of SpaceX rockets — the cores. Understand their reuse stats, landings, and mission reliability.'"
+    [icon]="'my_location'"
+    [routerLink]="['/cores']"
+  />
+</div>
+
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-[50px]">
-    <!-- <app-feature-card [Title]="'Latest Launch'"  [Description]="'Discover the most recent SpaceX launch and its mission details.'" [icon]="'rocket_launch'"/>
-    <app-feature-card [Title]="'Upcoming missions'" [Description]="'Stay updated with upcoming SpaceX launches and missions.'" [icon]="'calendar_today'"/> -->
   </div>
